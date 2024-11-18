@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bad Request</title>
+        <style>
+            /* General Reset */
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family: "Arial", sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #1b1b1b;
+                overflow: hidden;
+            }
+
+            /* Animated Background */
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, #444 20%, #1b1b1b 80%);
+                animation: backgroundAnimation 10s linear infinite;
+                z-index: -1;
+            }
+
+            @keyframes backgroundAnimation {
+                0% {
+                    transform: scale(1) translate(-50%, -50%);
+                }
+                50% {
+                    transform: scale(1.1) translate(-50%, -50%);
+                }
+                100% {
+                    transform: scale(1) translate(-50%, -50%);
+                }
+            }
+
+            /* Error Message Container */
+            .error-container {
+                text-align: center;
+                color: #f44336;
+            }
+
+            .error-container h1 {
+                font-size: 4em;
+                margin-bottom: 0.2em;
+                animation: glow 1.5s ease-in-out infinite;
+            }
+
+            .error-container p {
+                font-size: 1.5em;
+                color: #dcdcdc;
+            }
+
+            @keyframes glow {
+                0%,
+                100% {
+                    text-shadow:
+                        0 0 10px #f44336,
+                        0 0 20px #f44336,
+                        0 0 30px #f44336;
+                }
+                50% {
+                    text-shadow:
+                        0 0 20px #f44336,
+                        0 0 30px #f44336,
+                        0 0 40px #f44336;
+                }
+            }
+
+            /* Button Style */
+            .retry-btn {
+                display: inline-block;
+                margin-top: 1em;
+                padding: 0.8em 2em;
+                font-size: 1.2em;
+                color: #fff;
+                background: #f44336;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background 0.3s ease-in-out;
+            }
+
+            .retry-btn:hover {
+                background: #d32f2f;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="error-container">
+            <h1>400 Bad Request</h1>
+            <p>The server is not the problem. You are the problem</p>
+        </div>
+    </body>
+</html>

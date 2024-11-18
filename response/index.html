@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rust Server</title>
+        <style>
+            /* General Styles */
+            body {
+                margin: 0;
+                font-family: "Arial", sans-serif;
+                background-color: #2e073f;
+                color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                margin: 0;
+                text-align: center;
+                color: black;
+            }
+
+            p {
+                font-size: 1.2rem;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            /* Animation Container */
+            .animation-container {
+                position: relative;
+                width: 300px;
+                height: 200px;
+                margin: 20px auto;
+            }
+
+            .server {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                background: linear-gradient(145deg, #2c2c44, #24243a);
+                box-shadow:
+                    0px 4px 10px rgba(0, 0, 0, 0.4),
+                    0px -4px 10px rgba(255, 255, 255, 0.1);
+                animation: float 4s infinite ease-in-out;
+            }
+
+            .lights {
+                position: absolute;
+                width: 80%;
+                height: 8%;
+                background: #f39c12;
+                top: 15%;
+                left: 10%;
+                border-radius: 2px;
+                box-shadow:
+                    0 0 8px #f39c12,
+                    0 0 20px #f39c12;
+                animation: blink 1.5s infinite;
+            }
+
+            .lights:nth-child(2) {
+                top: 40%;
+                background: #27ae60;
+                box-shadow:
+                    0 0 8px #27ae60,
+                    0 0 20px #27ae60;
+                animation-delay: 0.5s;
+            }
+
+            .lights:nth-child(3) {
+                top: 65%;
+                background: #2980b9;
+                box-shadow:
+                    0 0 8px #2980b9,
+                    0 0 20px #2980b9;
+                animation-delay: 1s;
+            }
+
+            @keyframes blink {
+                0%,
+                50%,
+                100% {
+                    opacity: 1;
+                }
+                25% {
+                    opacity: 0.6;
+                }
+            }
+
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-15px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>This server is created using Rust!</h1>
+            <p>Powered by the speed and safety of Rust programming.</p>
+            <div class="animation-container">
+                <div class="server">
+                    <div class="lights"></div>
+                    <div class="lights"></div>
+                    <div class="lights"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
