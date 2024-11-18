@@ -19,7 +19,7 @@ fn main() {
                         for line in data.lines() {
                             match line {
                                 Ok(val) => {
-                                    if "KIDDA / HTTP/1.1" == val {
+                                    if "GET / HTTP/1.1" == val {
                                         send_response = true;
                                     }
                                     break;
